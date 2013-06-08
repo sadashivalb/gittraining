@@ -1,4 +1,3 @@
-
 gittraining
 ===========
 https://weblion.psu.edu/trac/weblion/wiki/BuildOut
@@ -41,6 +40,15 @@ For further control over this process:
     buildout.cfg. 
     Use the -o flag to run in offline mode. Buildout will not attempt to
     download files, but will fail if they are not available locally. 
+    
+URL's
+=====
+http://inventwithpython.com/hacking/chapters/
+https://www.edx.org/courses
+https://www.udacity.com/
+https://www.coursera.org 
+https://news.ycombinator.com/item?id=5511466
+http://highscalability.com/
 
 
 
