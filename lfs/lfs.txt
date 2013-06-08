@@ -430,3 +430,9 @@ default gateway:door to open
 telnet,ftp,ssh
 packates,protocals,address[dest]
 using firewall,inetd,xinetd you can control access
+
+sharing filesystem in linux and windows forth back
+samba,nfs smmount src dst, mount src dst
+sharing /etc/exports 
+cat > exports
+/home praveen(rw)
