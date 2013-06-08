@@ -436,3 +436,9 @@ samba,nfs smmount src dst, mount src dst
 sharing /etc/exports 
 cat > exports
 /home praveen(rw)
+Configuration files
+/home/user -- for particular configuration
+/etc -all users configuration files
+run level 0-6 rc1.d/ File starts with k killed
+File starts with S starts to enter runlevel
+defalut user runlevel 5-X windows system 
