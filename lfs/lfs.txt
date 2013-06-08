@@ -442,3 +442,10 @@ Configuration files
 run level 0-6 rc1.d/ File starts with k killed
 File starts with S starts to enter runlevel
 defalut user runlevel 5-X windows system 
+
+maintainance
+zip tar
+swap and ram
+if ram fills it will send idle process to swap memory then will come back forth and back process
+gcb
+cron
