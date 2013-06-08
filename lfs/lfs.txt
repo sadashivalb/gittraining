@@ -449,3 +449,17 @@ swap and ram
 if ram fills it will send idle process to swap memory then will come back forth and back process
 gcb
 cron
+
+Troublehooting
+/var/log/files
+start and stop through init.d 
+hup and nohup
+find . -mmin 10 -- even if haven't modified the file but system program file will change
+grep,tail,head
+lilo- linux loader
+GNU GRUB (short for GNU GRand Unified Bootloader) 
+local system IP:127.0.0.1
+dig
+kernal modules
+dd - convert and copy files
+/dev/-- to drive of cd or floppy and pendrive etc
