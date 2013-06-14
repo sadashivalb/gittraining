@@ -51,4 +51,4 @@ https://news.ycombinator.com/item?id=5511466
 http://highscalability.com/
 
 
-
+make python module library then run instead of calling every time function

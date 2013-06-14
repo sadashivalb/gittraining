@@ -21,3 +21,6 @@ tmp/
 updates/
 userContent/
 src/folder.egg-info/PKG-INFO
+*.tar.gz
+*.tar.bz2
+*.tgz
