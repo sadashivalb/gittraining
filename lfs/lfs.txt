@@ -463,3 +463,6 @@ dig
 kernal modules
 dd - convert and copy files
 /dev/-- to drive of cd or floppy and pendrive etc
+
+SC is a command line program used for communicating with the
+NT Service Controller and services.
