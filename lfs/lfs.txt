@@ -466,3 +466,14 @@ dd - convert and copy files
 
 SC is a command line program used for communicating with the
 NT Service Controller and services.
+
+linux kernal - progm execution if it's filled with process  in RAM it allocate the since the last exection stopped
+to swap and then moved to the original if it's necesassry.
+[Hard Disk Andformatting]
+Paging is usually more efficient
+but traditional Linux terminology talks about swapping anyway.
+dd if=/dev/zero of=/home/halesh/ll - create swap file
+swapon/swapoff
+swap space should be less than pysical memory.
+
+
