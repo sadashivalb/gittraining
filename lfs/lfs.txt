@@ -477,3 +477,17 @@ swapon/swapoff
 swap space should be less than pysical memory.
 
 
+getty listens at the terminal and waits for the user to notify that he is ready to login in (this usually means that the user must type something).
+
+chfn
+Change the full name field.
+chsh
+Change the login shell.
+Remove user
+userdel -R 
+Selecting the backup tool
+ The traditional UNIX tools used for backups are tar, cpio, and dump
+/etc and /home are the backup
+hwclock
+automate
+ntpd – network time protocal daemon
