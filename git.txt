@@ -2,6 +2,8 @@ git co master -- linux/* #checkout the sinle file of multiple file from other br
 git diff <commit> head path/to/fubar
   show the diff between a file on the current branch and potentially another
   branch
+  
+The lesson here is that if you’re going to push changes, make a bare repository clone with git clone --bare.
 
 git add -p
 git branch -r -d <remote-branch> #remove the remote branch
@@ -42,3 +44,5 @@ Updating submodules
   If the update in the submodule is not committed in the
   main repository, it is lost and doing git submodule
   update will revert to the previous version.
+  
+  
