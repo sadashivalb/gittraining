@@ -1,0 +1,12 @@
+Linux Network Administrators Guide
+==================================
+1. Introduction to Networking
+
+TCP/IP LAN,WAN ,UUCP and IPX
+Communication is impossible without some sort of language or code. In computer networks, these languages are 
+collectively referred to as protocols.
+The most common type of LAN hardware is known as Ethernet.
+
+ Unix-to-Unix Copy (UUCP) started out as a package of programs that transferred files over serial lines,
+ ssh is more reliable then all tcp.
+ packet - data will send as chunk  of data.
