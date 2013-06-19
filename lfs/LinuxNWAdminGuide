@@ -24,6 +24,9 @@ The most common type of LAN hardware is known as Ethernet.
     eth0, eth1,These are the Ethernet card interfaces. They are used for most Ethernet cards, including many of the 
     parallel port Ethernet cards.
     Parallel Line IP (PLIP) is a cheap way to network when you want to connect only two machines.
+    
+    Point-to-Point Protocol (PPP) and Serial Line IP (SLIP) are widely used protocols for carrying IP packets over a 
+    serial link. 
 
 
  
