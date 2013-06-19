@@ -1,2 +1,4 @@
 https://pypi.python.org/packages/source/p/pypiserver/pypiserver-1.1.0.zip
 https://pypi.python.org/packages/source/b/boto/boto-2.9.2.tar.gz
+http://ss64.com/bash/
+http://tldp.org/LDP/abs/html/comparison-ops.html
