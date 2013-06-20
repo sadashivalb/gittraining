@@ -27,6 +27,25 @@ The most common type of LAN hardware is known as Ethernet.
     
     Point-to-Point Protocol (PPP) and Serial Line IP (SLIP) are widely used protocols for carrying IP packets over a 
     serial link. 
+ 4. Configuring the Serial Hardware
+ 
+    RS-232 is currently the most common standard for serial communications in the PC world. 
+    The name stty probably means “set tty,” but the stty command can also be used to display a terminal's configuration.
+    setserial - 
+    
+ 5. Configuring TCP/IP Networking
+    
+    /etc/hosts - configure hostname or FQDN
+    gateway between the two networks, is assigned a host number of 1 on both of them, which gives it the IP addresses
+    172.16.1.1 and 172.16.2.1, respectively.
+    Interface Configuration for IP-ifconfig route
+    route add 127.0.0.1
+    ifconfig lo,PLIP,SLIP simple point-to-point links like 
+    netstat is a useful tool for checking your network configuration and activity
+    The options –t, –u, –w, and –x show active TCP, UDP, RAW, or Unix socket connections.
+    netsta -na -->a is flag
+    arp -a
+
 
 
  
