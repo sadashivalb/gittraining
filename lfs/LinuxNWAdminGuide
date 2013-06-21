@@ -34,18 +34,38 @@ The most common type of LAN hardware is known as Ethernet.
     setserial - 
     
  5. Configuring TCP/IP Networking
-    
+    named is usually started at system boot time and runs until the machine goes down again
+    dnswalk,
     /etc/hosts - configure hostname or FQDN
     gateway between the two networks, is assigned a host number of 1 on both of them, which gives it the IP addresses
     172.16.1.1 and 172.16.2.1, respectively.
     Interface Configuration for IP-ifconfig route
-    route add 127.0.0.1
+    route add 127.0.0.1Name Service and Resolver Configuration
+       
     ifconfig lo,PLIP,SLIP simple point-to-point links like 
     netstat is a useful tool for checking your network configuration and activity
     The options –t, –u, –w, and –x show active TCP, UDP, RAW, or Unix socket connections.
     netsta -na -->a is flag
     arp -a
+    
+  6. Name Service and Resolver Configuration
+     /ets/hosts - hostname
+     /ete/reslove.conf - nameserver
+     nslookup - nslookup is a network administration command-line tool available for many computer operating systems 
+     for querying the Domain Name System (DNS).
+     named is usually started at system boot time and runs until the machine goes down again
+     dnswalk,nslint,dig nad host - useful tools
+     
+  7. Serial Line IP
+     slattach - attach a network interface to a serial line
+     dip means Dialup IP.
+     dip provides an interpreter for a simple scripting language that can handle the modem for you,
+     dip Running in Server Mode
 
+     
+     turn of firewall inl linux
+     service iptables stop
+     service iptables off
 
 
  
