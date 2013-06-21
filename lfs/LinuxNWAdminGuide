@@ -61,6 +61,11 @@ The most common type of LAN hardware is known as Ethernet.
      dip means Dialup IP.
      dip provides an interpreter for a simple scripting language that can handle the modem for you,
      dip Running in Server Mode
+     
+     8. The Point-to-Point Protocol
+     a kernel component that handles the low-level protocols (HDLC, IPCP, IPXCP, etc.) and the user space
+     pppd daemon that handles the various higher-level protocols, such as PAP and CHAP.
+     Similarly, /etc/ppp/ip-down can be used to undo any actions of ip-up after the PPP link has been taken down again
 
      
      turn of firewall inl linux
