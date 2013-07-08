@@ -226,3 +226,39 @@ syntax
 node "wwe.example.com"{
     include apache
 }
+
+
+Challenge
+
+You want to install a package
+Solution
+
+package { "screen":
+    ensure => "installed" or ensure => "latest"
+    }
+
+
+you want to install multiple packages
+package { "screen": ensure => "installed" }
+package { "strace": ensure => "installed" }
+or 
+# you can use a global package parameter
+Package { ensure => "installed" }
+
+package { "screen": } 
+package { "strace": }
+
+You want to remove a package
+Solution
+
+# remove a package but leave its config files alone
+package { "screen":
+    ensure => "absent"
+    }
+
+    # remove a package and purge its config files
+    package { "screen":
+        ensure => "purged"
+        }
+
+
