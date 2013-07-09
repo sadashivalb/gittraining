@@ -491,3 +491,7 @@ Selecting the backup tool
 hwclock
 automate
 ntpd – network time protocal daemon
+
+ImportantNetwork Features
+inetd, the Internet Daemon.
+sshd
