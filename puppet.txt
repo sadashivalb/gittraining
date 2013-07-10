@@ -261,4 +261,273 @@ package { "screen":
         ensure => "purged"
         }
 
+You want to change the default package provider for your systems
+# in your site.pp
+Package { provider => "aptrpm" }
+
+You want to install a Ruby Gem
+Solution
+
+package { 'sinatra':
+    ensure   => 'installed',
+        provider => 'gem',
+        }
+
+File:
+You want to create a new directory
+Solution
+
+# create a directory
+file { "/etc/site-conf":
+    ensure => "directory",
+    }
+
+    # a fuller example, including permissions and ownership
+    file { "/var/log/admin-app-log":
+        ensure => "directory",
+        owner  => "root",
+        group  => "wheel",
+        mode   => 750,
+      }
+
+    # this example is incorrect and creates a file
+    file { "/etc/site-conf/":
+            ensure => "present",
+         }
+
+You want to create a new directory tree
+Solution
+
+# create a directory tree, list the directories in order
+# and puppet will "do the right thing".
+file { [ "/usr/local/whisper/", "/usr/local/whisper/2.0",
+         "/usr/local/whisper/2.0/bin", "/usr/local/whisper/2.0/log" ]:
+    ensure => "directory",
+}
+
+# or you can assign them to a variable and use them in the resource
+$whisper_dirs = [ "/usr/local/whisper/", "/usr/local/whisper/2.0",
+                  "/usr/local/whisper/2.0/bin", "/usr/local/whisper/2.0/log",
+                ]
+
+file { $whisper_dirs:
+    ensure => "directory",
+    owner  => "root",
+    group  => "wheel",
+    mode   => 750,
+}
+
+# doesn't work - will fail unless whisper and 2.0 already exist
+file { "/usr/local/whisper/2.0/bin":
+  ensure => "directory",
+}
+
+You want to create a symlink using puppet.
+Solution
+
+# preferred symlink syntax
+file { '/tmp/link-to-motd':
+   ensure => 'link',
+   target => '/etc/motd',
+}
+
+You want to deploy a specific file based on the value of a fact.
+Solution
+
+file { "/etc/mysql/conf.d/tuning.cnf":
+    ensure => "present",
+    source => [
+        "puppet:///modules/mysql-server/tuning.$hostname.cnf",
+        "puppet:///modules/mysql-server/tuning.$domain.cnf",
+        "puppet:///modules/mysql-server/tuning.cnf"
+    ],
+}
+
+Only add a file if it’s absent.
+You only want puppet to add a file if the file isn’t already present. Once it’s added, or if it’s already there, you want to leave it alone.
+Solution
+
+file { "/tmp/hello-file":
+    replace => "no", # this is the important property
+    ensure  => "present",
+    content => "From Puppet\n",
+    mode    => 644,
+}
+
+You want to restart a service when its config file changes
+Solution
+
+# define the service to restart
+service { "sshd":
+    ensure  => "running",
+    enable  => "true",
+    require => Package["openssh-server"],
+}
+
+# add a notify to the file resource
+file { "/etc/ssh/sshd_config":
+    notify  => Service["sshd"],  # this sets up the relationship
+    mode    => 600,
+    owner   => "root",
+    group   => "root",
+    require => Package["openssh-server"],
+    content => template("ssh/sshd_config.erb"),
+}
+
+Reduce Duplicated File Attributes
+Challenge
+Using the template
+You’ve had enough of specifying owner, mode, group and other settings on every file resource and you want a solution with less duplication
+Solution
+
+File {
+  ensure => "present",
+  owner  => "root",
+  group  => "root",
+  mode   => 644,
+}
+
+file { "/etc/cobbler/modules.conf":
+  content => template("cobbler/modules.conf"),
+}
+
+file { "/etc/cobbler/dhcp.template":
+  content => template("cobbler/dhcp.template"),
+}
+
+# create a simple hostname and ip host entry
+host { 'syslog':
+    ip => '10.10.10.10',
+}
+
+# create a fully qualified full host entry with an alias
+host { 'ntpserver.example.com':
+    ip => '10.100.10.50',
+    host_aliases => 'timeserver',
+}
+
+# host entry with multiple aliases
+host { 'dashboard':
+    ip => '10.120.100.111',
+    host_aliases => [ 'nagios', 'munin' ],
+}
+
+Remove a host entry
+Solution
+
+host { 'syslog':
+    ensure => "absent",
+}
+
+host { 'ntpserver.example.com':
+    ensure => "absent",
+}
+
+Remove all unmanaged host entries
+
+# always test with noop first!
+resources { 'host':
+    purge => true,
+    noop => true,
+}
+
+# remove ALL unmanaged host resources
+resources { 'host': purge => true }
+
+Adding a per-domain hostname
+
+host { "syslog":
+    ip => $domain ? {
+        /production/ => "10.10.10.10",
+        /staging/    => "192.168.23.10",
+        default      => "10.100.100.100",
+    }
+}
+
+
+exec { "refresh_cache":
+    command => "refresh_cache 8600",
+    path    => "/usr/local/bin/:/bin/",
+    # path    => [ "/usr/local/bin/", "/bin/" ],  # alternative syntax
+
+You want to set a default $PATH for all execs
+
+Solution
+
+# put this somewhere global, like site.pp
+Exec { path => [ "/bin/", "/sbin/" , "/usr/bin/", "/usr/sbin/" ] }
+
+# uses the globally specified path
+exec { "make_foo_state":
+    command => "mkdir -p /tmp/foo/state",
+}
+
+# overrides the global path for this command
+exec { "my_local_command":
+    command => "my_special_local_command",
+    path    => "/usr/local/sbin/",
+}
+}
+
+You’d like nicer names for your exec resources
+
+# exec with the command as the name
+exec { "/bin/mkdir -p /tmp/needed/directory":
+}
+
+package { "needed":
+    ensure  => "installed",
+    # awkward, long require
+    require => Exec["/bin/mkdir -p /tmp/needed/directory"],
+}
+
+# nicer, human friendly naming
+exec { "create_needed_directory":
+    command => "/bin/mkdir -p /tmp/needed/directory",
+}
+
+package { "needed":
+    ensure  => "installed",
+    # easier to read require
+    require => Exec["create_needed_directory"],
+}
+
+Don’t run exec if $file exists
+exec { "create_needed_directory":
+    command => "/bin/mkdir -p /tmp/needed/directory",
+    creates => "/tmp/needed/directory"
+}
+
+Selective exec running
+
+# run exec only if command in onlyif returns 0.
+exec { "run_account_purger":
+    command => "/usr/local/sbin/account_purger",
+    onlyif => "grep -c old_account /etc/passwd",
+}
+
+# or run multiple commands - all must succeed for exec to run
+exec { "run_account_purger":
+    command => "/usr/local/sbin/account_purger",
+    onlyif => [
+                "grep -c old_account /etc/passwd",
+                "test -d /home/old_account/"
+              ]
+}
+
+Logging an Execs output
+
+# on_failure logs the commands output on failure
+exec { "delete_str_tmp":
+    path    => "/usr/local/bin/:/bin:/usr/sbin",
+    command => 'find /tmp/ -name "*.str" -type f | xargs -n 1 rm',
+    logoutput => "on_failure",
+}
+
+# on_failure logs the commands output on failure
+exec { "delete_str_tmp":
+    path    => "/usr/local/bin/:/bin:/usr/sbin",
+    command => 'find /tmp/ -name "*.str" -type f | xargs -n 1 rm',
+    logoutput => "on_failure",
+}
 
