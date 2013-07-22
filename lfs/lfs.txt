@@ -495,3 +495,22 @@ ntpd – network time protocal daemon
 ImportantNetwork Features
 inetd, the Internet Daemon.
 sshd
+
+The Network Information System
+nis called Yellow pages
+ypcat
+/etc/hosts
+/etc/passwd
+
+The NetworkFile System
+cat /proc/filesystems
+Mounting an NFS Volume
+# mount -t nfs nfs_volume local_dir options 
+Mount and unmount
+$ sudo mount /dev/sda6 /mnt
+$ sudo umount /dev/sda6
+parted -l #list the filesystems
+ fstab - static information about the filesystems
+IPX and the NCP Filesyste next
+IP - IP Exchange
+

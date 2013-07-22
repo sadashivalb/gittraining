@@ -1,0 +1,18 @@
+git grep \
+http
+I-how to proceed
+II-Making partition
+III-compiling and installing
+LSB - Linux System Base
+http://www.linuxfromscratch.org/hints/downloads/files/errors.txt.
+http://www.linuxfromscratch.org/mirrors.html,search.html,faq,mail.html
+http://catb.org/~esr/faqs/smart-questions.html
+ /boot – Highly recommended. Use this partition to store kernels and other booting information
+/usr – A separate /usr partition is generally used if providing a server for a thin client or diskless workstation
+/opt – This directory is most useful for BLFS where multiple installations of large packages like Gnome
+/tmp – A separate /tmp directory is rare,
+/usr/src – This partition is very useful for providing a location to store BLFS source files and share them across
+LFS builds. 
+pstree - display the process tree
+ The mounting of NFS volumes closely resembles regular file systems. Invoke mount using the following syntax:[1]
+
