@@ -2,6 +2,7 @@ http://www.tldp.org/LDP/sag/html/index.html
 http://www.tldp.org/LDP/nag2/index.html
 http://linux-sec.net/
 http://www.linux-sec.net/Firewall/Tools/
+http://lowfatlinux.com/
 LFS
 ===
 32 bit 4GB slow instllation file size less, exection slow
@@ -12,6 +13,18 @@ The structure of LFS follows Linux standards as closely as possible. The primary
 • POSIX.1-2008.
 • Filesystem Hierarchy Standard (FHS)
 • Linux Standard Base (LSB) Specificatio
+
+
+The system startup and shutdown is controlled by the system initialization
+configuration file /etc/inittab and the init scripts in /etc/rc.d/init.d/.
+Linux employs version numbers in its run-time shared object libraries[for any software],
+which can therefore coexist on the system with different versions of the same libraries.
+for every network change windows require the reboot,  Linux also has many kernel parameters which can be set through the 
+"/proc/" interface to allow dynamic changes to a running kernel.
+The file system directory structure is completely configurable and not limited to drive letters such as A, C or D as a 
+top level mount point. Thus MS/Windows has a limit of 23 mount points. (22 + Floppy).
+The kernel is at the heart of the Linux/Unix operating system. It is responsible for enabling multi-tasking, multi-user,
+multi-threading, multi-processing, security, interfacing with hardware and the network.
 
 Basics
 tar creation,exrtaction,Makefile,make,make install
