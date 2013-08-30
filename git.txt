@@ -44,5 +44,8 @@ Updating submodules
   If the update in the submodule is not committed in the
   main repository, it is lost and doing git submodule
   update will revert to the previous version.
+
+Delete Local tag: git tag -l | xargs git tag -d
+Delte Remote tag: git tag -l | xargs -n 1 git push --delete origin
   
   
