@@ -211,7 +211,7 @@ Guido van Rossum (creator of Python) approves.
 
 '''
 This is a multiline
-comment.
+comment
 '''
 
 comments will not affect the execution of program.
@@ -231,18 +231,39 @@ logical:and,or,not
 condition:if
 alternate condition:if else
 chained condition:if elif else
+comparison operator: == != > <
 The return statement allows you to terminate the execution of a function before
 you reach the end.
 The process of a function calling itself is recursion, and such functions are said
 to be recursive.
+def rec():
+  rec()
+Notice that we removed the print statements we wrote in the previous step.
+Code like that is called scaffolding because it is helpful for building the program
+but is not part of the final product.
 
+As you should expect by now, you can call one function from within another.
+This ability is called composition.
+caffolding: Code that is used during program development but is not part of
+the final version.
 
+The expression in brackets is called an index   [7].
+slice
+a="welcome to python,"
+a[5:8]
+a[:8] a[3:] a[:]
 
-
-   
-   
-
-
-
-
+greeting = "Hello, world!"
+greeting[0] = ’J’
+print greeting
+# ERROR!
+Instead of producing the output Jello, world!, this code produces the runtime
+error TypeError: object doesn’t support item assignment.
+Strings are immutable, which means you can’t change an existing string. The
+best you can do is create a new string that is a variation on the original:
+greeting = "Hello, world!"
+newGreeting = ’J’ + greeting[1:]
+print newGreeting
+The solution here is to concatenate a new first letter onto a slice of greeting.
+This operation has no effect on the original string.
 
