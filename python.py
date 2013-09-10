@@ -224,9 +224,17 @@ local variable: A variable defined inside a function. A local variable can only
 be used inside its function.
 
 Conditional and Operations:
-you can
-check whether one number is divisible by another—if x % y is zero, then x is
-divisible by y.
+you can check whether one number is divisible by another—if x % y is zero, then x is divisible by y.
+7/3 yeild 2 as quotient 7%3 yeild 1 as reminder
+boolean : 1 or 0
+logical:and,or,not
+condition:if
+alternate condition:if else
+chained condition:if elif else
+The return statement allows you to terminate the execution of a function before
+you reach the end.
+The process of a function calling itself is recursion, and such functions are said
+to be recursive.
 
 
 
