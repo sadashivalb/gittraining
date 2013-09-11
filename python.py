@@ -255,3 +255,9 @@ This operation has no effect on the original string.
 
 you can check whether one number is divisible by another—if x % y is zero, then x is divisible by y.
 
+a = 'hello ll'
+for char in a:
+ print char
+Compare strings a and b like a>b
+import string
+dir(string)
