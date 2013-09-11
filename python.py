@@ -7,6 +7,8 @@ Input will take only numbers
 b = raw_input('enter a strin')
 raw_input will take string we have to type cast if int is required.
 
+Start Simple server : python -m  SimpleHTTPServer 9000
+
 Python provides a way to examine the contents of modules (and other objects) using the built-in dir() function.
 Introspection is the act of self-examination. Introspection refers to the examination of ones own thoughts,
 feelings, motivations, and actions. The great philosopher Socrates spent much of his life in self-examination,
