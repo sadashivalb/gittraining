@@ -1,4 +1,6 @@
 Here we are going to install the nginx[Fileserver]
+http://blog.justin.kelly.org.au/how-to-create-a-self-sign-ssl-cert-with-no-pa/
+http://chschneider.eu/linux/server/openssl.shtml
 1. Install nginx
 
 rpm -ivh http://nginx.org/packages/rhel/6/x86_64/RPMS/nginx-1.4.1-1.el6.ngx.x86_64.rpm
