@@ -101,8 +101,11 @@ elif:
 else
 
 Loops while and for loop
-oridinal - 1,2,3,
-cardinal(oridinal - 1) 0,1,2
+for VARIABLE in LIST:
+    BODY
+for number in range(20):
+...  if number%2 == 0:
+...   print number
 
 debugging purpose
 
@@ -261,3 +264,73 @@ for char in a:
 Compare strings a and b like a>b
 import string
 dir(string)
+
+Lists:
+Lists are mutable, string and tuples are immutable.
+Lists is an ordered list of values.
+range(1, 10, 2)
+
+list1 and list2 can be +,*
+update list fruit[0] = "pear"
+
+in operator used to check give word exist in the given list,tuple or string.
+
+list[1:3] = [’x’, ’y’] #append list starts with one and ends with 2
+a = "banana"
+b = "banana"
+a is object and banana is value
+del list[position]
+list = ['hello', 2.0, 5, [10, 20], (1, 2, 3, (4,5))]
+list[3][1] = 20 #combine the list
+a = 'welcome to python'
+a.split(a)
+a.split(a,'to')#to as the delimiter
+b = ['hello','world']
+string.join(b)# 'hello world'
+string.join(b, '_')#_ is delimiter hello_world
+
+delimiter: A character or string used to indicate where a string should be split.
+list --> can string,int,float,tuple,nested list or tuple
+
+Tuple
+a = (1,'er',2.0,1,1,-2,[1,2,])
+We can perform slice on tuples also
+List - When you have a collection of items and may want to add/remove items, rearrange their order, and so on.
+
+Tuple - When you have a collection of items and do NOT want to add/remove items, or rearrange their order. Realizing the usefulness of this comes with experience.
+
+Dictionary - When you want to map certain keys to certain values, like a dictionary of words. The typical use case is when you have some kind of identifier (the key) such as a person's name:
+List - when you have data that has some order
+Tuple - when ordered data is to be immutable
+Dictionary - when data is related by key - value pairs
+Lists are usually homogeneous, tuples are usually heterogeneous.
+
+Lists are for variable length, tuples are for fixed length.
+
+The if __name__ == "__main__": ... trick exists in Python so that our Python files can act as either reusable modules, or as standalone programs. As a toy example, let’s say that we have two files:
+
+$ cat mymath.py
+def square(x):
+    return x * x
+
+    if __name__ == '__main__':
+        print "test: square(42) ==", square(42)
+
+
+        $ cat mygame.py
+        import mymath
+
+        print "this is mygame."
+        print mymath.square(17)
+        In this example, we’ve written mymath.py to be both used as a utility module, as well as a standalone program. We can run mymath standalone by doing this:
+
+        $ python mymath.py
+        test: square(42) == 1764
+        But we can also use mymath.py as a module; let’s see what happens when we run mygame.py:
+
+        $ python mygame.py
+        this is mygame.
+        289
+        Notice that here we don’t see the ‘test’ line that mymath.py had near the bottom of its code. That’s because, in this context, mymath is not the main program. That’s what the if __name__ == "__main__": ... trick is used for.
+
+
