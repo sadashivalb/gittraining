@@ -294,7 +294,21 @@ list --> can string,int,float,tuple,nested list or tuple
 
 Tuple
 a = (1,'er',2.0,1,1,-2,[1,2,])
+a = 1,2,3,4 #similar to tuple
+swap :a,b=b,a
 We can perform slice on tuples also
+tuple: A sequence type that is similar to a list except that it is immutable.Tuples can be used wherever an immutable type
+       is required, such as a key in a dictionary.
+Dictionary:
+a = {'kara':bang}
+del a['kara']
+keys are unique
+len(a)
+long integers 1L:Take any number of range
+
+dictionary: A collection of key-value pairs that maps from keys to values. The
+keys can be any immutable type, and the values can be any type.
+
 List - When you have a collection of items and may want to add/remove items, rearrange their order, and so on.
 
 Tuple - When you have a collection of items and do NOT want to add/remove items, or rearrange their order. Realizing the usefulness of this comes with experience.
@@ -306,6 +320,12 @@ Dictionary - when data is related by key - value pairs
 Lists are usually homogeneous, tuples are usually heterogeneous.
 
 Lists are for variable length, tuples are for fixed length.
+
+Files and Exceptions:
+While a program is running, its data is in memory. When the program ends,or the computer shuts down, data in memory 
+disappears. To store data per-manently, you have to put it in a file. Files are usually stored on a hard drive,
+floppy drive, or CD-ROM.
+
 
 The if __name__ == "__main__": ... trick exists in Python so that our Python files can act as either reusable modules, or as standalone programs. As a toy example, let’s say that we have two files:
 
