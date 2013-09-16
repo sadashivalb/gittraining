@@ -292,6 +292,9 @@ string.join(b, '_')#_ is delimiter hello_world
 delimiter: A character or string used to indicate where a string should be split.
 list --> can string,int,float,tuple,nested list or tuple
 
+Files:
+fr = open('url.txt','r')
+>>> print fr.read(1
 Tuple
 a = (1,'er',2.0,1,1,-2,[1,2,])
 a = 1,2,3,4 #similar to tuple
@@ -311,9 +314,12 @@ keys can be any immutable type, and the values can be any type.
 
 List - When you have a collection of items and may want to add/remove items, rearrange their order, and so on.
 
-Tuple - When you have a collection of items and do NOT want to add/remove items, or rearrange their order. Realizing the usefulness of this comes with experience.
+Tuple - When you have a collection of items and do NOT want to add/remove items, or rearrange their order.
+Realizing the usefulness of this comes with experience.
 
-Dictionary - When you want to map certain keys to certain values, like a dictionary of words. The typical use case is when you have some kind of identifier (the key) such as a person's name:
+Dictionary - When you want to map certain keys to certain values, like a dictionary of words. The typical use case
+is when you have some kind of identifier (the key) such as a persons name:
+
 List - when you have data that has some order
 Tuple - when ordered data is to be immutable
 Dictionary - when data is related by key - value pairs
@@ -322,12 +328,55 @@ Lists are usually homogeneous, tuples are usually heterogeneous.
 Lists are for variable length, tuples are for fixed length.
 
 Files and Exceptions:
-While a program is running, its data is in memory. When the program ends,or the computer shuts down, data in memory 
+While a program is running, its data is in memory. When the program ends,or the computer shuts down, data in memory
 disappears. To store data per-manently, you have to put it in a file. Files are usually stored on a hard drive,
 floppy drive, or CD-ROM.
 
+Attribute   Description
+file.closed Returns true if file is closed, false otherwise.
+file.mode   Returns access mode with which file was opened.
+file.name   Returns name of the file.
+file.softspace  Returns false if space explicitly required with print, true otherwise.
 
-The if __name__ == "__main__": ... trick exists in Python so that our Python files can act as either reusable modules, or as standalone programs. As a toy example, let’s say that we have two files:
+file object = open(file_name [, access_mode][, buffering])
+fr = open('url.txt','r')
+fr.close()
+print  fr.read(1)
+
+"%d %d %d" % (1,2)
+TypeError:not enough arguments for format string
+"%d" % ’dollars’
+TypeError:illegal argument type for built-in operation
+"%6d" %62
+'     62'
+Pckling
+In order to put values into a file, you have to convert them to strings. You have
+already seen how to do that with str:
+>>> f.write (str(12.3))
+    f.write (str([1,2,3]))
+
+f.readline()
+’12.3[1, 2, 3]’
+
+
+to store a data structure, use the dump method and then close the file in the
+usual way then read a file:
+>>> pickle.dump(12.3, f)
+>>> pickle.dump([1,2,3], f)
+>>> f.close()
+
+Exceptions:
+Whenever a runtime error occurs, it creates an exception. Usually, the program
+stops and Python prints an error message.
+55/0 Division Error,a=[] a[5] Index Error,open('lalab.tct','r')IOError,b={} b[''] Keyerror.
+
+raise: To signal an exception using the raise statement.
+
+
+
+
+The if __name__ == "__main__": ... trick exists in Python so that our Python files can act as either reusable
+modules, or as standalone programs. As a toy example, let’s say that we have two files:
 
 $ cat mymath.py
 def square(x):
@@ -337,20 +386,50 @@ def square(x):
         print "test: square(42) ==", square(42)
 
 
-        $ cat mygame.py
-        import mymath
+$ cat mygame.py
+ import mymath
+ print "this is mygame."
+ print mymath.square(17)
+ In this example, we’ve written mymath.py to be both used as a utility module, as well as a standalone program.
+ We can run mymath standalone by doing this:
 
-        print "this is mygame."
-        print mymath.square(17)
-        In this example, we’ve written mymath.py to be both used as a utility module, as well as a standalone program. We can run mymath standalone by doing this:
+$ python mymath.py
+  test: square(42) == 1764
+  But we can also use mymath.py as a module; let’s see what happens when we run mygame.py:
 
-        $ python mymath.py
-        test: square(42) == 1764
-        But we can also use mymath.py as a module; let’s see what happens when we run mygame.py:
+$ python mygame.py
+  this is mygame.
+  289
+  Notice that here we don’t see the ‘test’ line that mymath.py had near the bottom of its code. That’s because,
+  in this context, mymath is not the main program. That’s what the if __name__ == "__main__": ... trick is used for.
 
-        $ python mygame.py
-        this is mygame.
-        289
-        Notice that here we don’t see the ‘test’ line that mymath.py had near the bottom of its code. That’s because, in this context, mymath is not the main program. That’s what the if __name__ == "__main__": ... trick is used for.
 
+Python is Interpreted: This means that it is processed at runtime by the interpreter and you do not need to compile
+your program before executing it. This is similar to PERL and PHP.
+import sys; x = 'foo'; sys.stdout.write(x + '\n')#Multiple statments in single line
+a = b = c = 1#Multiple assignment
+Python Membership Operators:in ,not in
+Python Identity Operators:is,is not
+A function is a block of organized, reusable code that is used to perform a single, related action.
+Functions provide better modularity for your application and a high degree of code reusing.
+Function Arguments:
+You can call a function by using the following types of formal arguments:
+
+Required arguments
+Keyword arguments
+Default arguments
+Variable-length arguments
+
+The Anonymous Functions:
+You can use the lambda keyword to create small anonymous functions. These functions are called anonymous because
+they are not declared in the standard manner by using the def keyword.
+lambda [arg1 [,arg2,.....argn]]:expression
+We can perform min and max operation on the list,tuple,dict and string.
+
+A module allows you to logically organize your Python code. Grouping related code into a module makes the code
+easier to understand and use.
+reload(module_name)
+
+
+dir(os.path)
 
