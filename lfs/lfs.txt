@@ -3,36 +3,34 @@ http://www.tldp.org/LDP/nag2/index.html
 http://linux-sec.net/
 http://www.linux-sec.net/Firewall/Tools/
 http://lowfatlinux.com/
+
 LFS
 ===
 32 bit 4GB slow instllation file size less, exection slow
-64 bit 8GB Fast instllation file size more, exection also fast
+64 bit 8GB Fast instllation file size more compare to the 32 bit, exection also fast
 
 LFS and Standards
 The structure of LFS follows Linux standards as closely as possible. The primary standards are:
 • POSIX.1-2008.
 • Filesystem Hierarchy Standard (FHS)
-• Linux Standard Base (LSB) Specificatio
+• Linux Standard Base (LSB) Specification
 
-
-The system startup and shutdown is controlled by the system initialization
-configuration file /etc/inittab and the init scripts in /etc/rc.d/init.d/.
-Linux employs version numbers in its run-time shared object libraries[for any software],
-which can therefore coexist on the system with different versions of the same libraries.
-for every network change windows require the reboot,  Linux also has many kernel parameters which can be set through the 
-"/proc/" interface to allow dynamic changes to a running kernel.
-The file system directory structure is completely configurable and not limited to drive letters such as A, C or D as a 
-top level mount point. Thus MS/Windows has a limit of 23 mount points. (22 + Floppy).
-The kernel is at the heart of the Linux/Unix operating system. It is responsible for enabling multi-tasking, multi-user,
-multi-threading, multi-processing, security, interfacing with hardware and the network.
+The system startup and shutdown is controlled by the system initialization configuration file /etc/inittab and the
+init scripts in /etc/rc.d/init.d/.Linux employs version numbers in its run-time shared object libraries[for any
+software], which can therefore coexist on the system with different versions of the same libraries. for every
+network change windows require the reboot,  Linux also has many kernel parameters which can be set through the
+"/proc/" interface to allow dynamic changes to a running kernel. The file system directory structure is completely
+configurable and not limited to drive letters such as A, C or D as a  top level mount point. Thus MS/Windows has a
+limit of 23 mount points. (22 + Floppy). The kernel is at the heart of the Linux/Unix operating system. It is
+responsible for enabling multi-tasking, multi-user, multi-threading, multi-processing, security, interfacing with
+hardware and the network.
 
 Basics
 tar creation,exrtaction,Makefile,make,make install
 rpm -i pack.rpm
 deb -i pack.deb
 which cmd #find the path for cmd
-locate cmd #Search the cmd in the system Locate command uses the database
-created by updatedb.
+locate file #Search the file in the system Locate command uses the database created by updatedb.
 ./configure --prefix=#installation path default it will install in the /usr
 If something goes wrong while running the configure script, review the config.log file.
 LFS is usually installed on a dedicated partition
@@ -59,6 +57,7 @@ crontab
 service sshd status #Check the status of the service.
 ps -efH | more #To view the current running process
 top | top command displays the top processes in the system,O or O for up and down
+
 Mount
 =====
 mkdir /u01
@@ -82,8 +81,8 @@ yum install/update/remove httpd
 rpm -i/u/e pkg.rpm #Install,update,remove or erase
 ping -c 5 gmail.com #Ping a remote host by sending only 5 packets.
 wget #web geturl or download
-hkconfig httpd --level 2345 on
-# chkconfig --list httpd
+chkconfig httpd --level 2345 on
+chkconfig --list httpd #chkconfig Updates and queries runlevel information
 sudo su - zope
 find . -name "*.sh" -print | xargs /bin/rm -f
 ls *.xml | xargs -l -i cp {} /home/user
@@ -97,238 +96,11 @@ iptables -I INPUT -p udp --dport 12345 -j ACCEPT
 
 service iptables save
 
-The kernel is the heart of the operating system. In fact, it is often
-mistakenly considered to be the operating system itself, but it is not. An
-operating system provides provides many more services than a plain kernel.
+The kernel is the heart of the operating system. In fact, it is often mistakenly considered to be the operating
+system itself, but it is not. An operating system provides provides many more services than a plain kernel.
 
-The Linux kernel consists of several important parts: process management,
-memory management, hardware device drivers, filesystem drivers, network
-management,
-
-user/normal programs
----------------------
-ps mgmt memory mgmt          kernal
-Floppy disk etc 
----------------------
-Hadware
-
-runlevel
-========
-Runlevel 0 is defined as ``system halt''
-Runlevel 1 is defined as ``single user mode''
-Runlevel 3 is defined as "multi user" because it is the runlevel
-that the system boot into under normal day to day conditions
-Runlevel 5 is typically the same as 3 except that a GUI gets started also
-Runlevel 6 is defined as ``system reboot''
-=======
-apropos - search the whatis database for strings
-:.!ls cp
-lsblk 
-http://www.tldp.org/LDP/sag/html/index.html
-http://www.tldp.org/LDP/nag2/index.html
-LFS
-===
-32 bit 4GB slow instllation file size less, exection slow
-64 bit 8GB Fast instllation file size more, exection also fast
-
-LFS and Standards
-The structure of LFS follows Linux standards as closely as possible. The primary standards are:
-• POSIX.1-2008.
-• Filesystem Hierarchy Standard (FHS)
-• Linux Standard Base (LSB) Specificatio
-
-Basics
-tar creation,exrtaction,Makefile,make,make install
-rpm -i pack.rpm
-deb -i pack.deb
-which cmd #find the path for cmd
-locate cmd #Search the cmd in the system Locate command uses the database
-created by updatedb.
-./configure --prefix=#installation path default it will install in the /usr
-If something goes wrong while running the configure script, review the config.log file.
-LFS is usually installed on a dedicated partition
-it is a good idea to use a small disk partition as swap space.
-netstat -tupln|grep "ps name"
-To create an ext3 file system on the LFS partition, run the following:
-mke2fs -jv /dev/<xxx>
-mkswap /dev/<yyy>
-Replace <yyy> with the name of the swap partition.
-grep #Search in the file
-find #Find the content in the filesystem.
-awk #Remove duplicate lines using awk.
-vim +143 filename.txt #open the file and got to line no 143
-vim -R /etc/passwd #Open file for read only
-Set env variable
-export env_name=value
-sort #
-diff #
-cat url-list.txt | xargs wget –c #Download all the URLs mentioned in the url-list.txt file
-ls -lh #Display the file in the human redable form
-gzip, bizp2, zip and unzip.
-shutdown
-crontab
-service sshd status #Check the status of the service.
-ps -efH | more #To view the current running process
-top | top command displays the top processes in the system,O or O for up and down
-Mount
-=====
-mkdir /u01
-# mount /dev/sdb1 /u01
-chmod #chmod +x file.txt
-chown oracle:dba dbora.sh #oracle user and dba group
-passwd #Set or change password
-mkdir -p dir1/dir2/dir3/dir4/ #Create the nested directory
-ifconfig #Use ifconfig command to view or configure a network interface on the Linux system
-ifconfig eth0 up/down #stop or start the eth0
-uname -a #Dispaly kernal,host name
-whereis bash #Find the where is bash
-whatis ifconfig #Whatis command displays a single line description about a command.
-man ls #Display the man page of a specific command.
-head/tail buildout.cfg #See the top or bottom 10 lines
-less hugefile.txt | ctr+f ctr+b
-su - USERNAME #Swithc username
-which bash #Finde the which bash
-mysql -u root -p -h IP #To connect to a remote mysql database. This will prompt for a password.
-yum install/update/remove httpd
-rpm -i/u/e pkg.rpm #Install,update,remove or erase
-ping -c 5 gmail.com #Ping a remote host by sending only 5 packets.
-wget #web geturl or download
-hkconfig httpd --level 2345 on
-# chkconfig --list httpd
-sudo su - zope
-find . -name "*.sh" -print | xargs /bin/rm -f
-ls *.xml | xargs -l -i cp {} /home/user
-{} is the default argument list marker. You need to use {} this with various
-command which take more than two arguments at a time
-Opening port in a linux firewall
-
-iptables -I INPUT -p tcp --dport 12345 --syn -j ACCEPT
-
-iptables -I INPUT -p udp --dport 12345 -j ACCEPT
-
-service iptables save
-
-The kernel is the heart of the operating system. In fact, it is often
-mistakenly considered to be the operating system itself, but it is not. An
-operating system provides provides many more services than a plain kernel.
-
-The Linux kernel consists of several important parts: process management,
-memory management, hardware device drivers, filesystem drivers, network
-management,
-
-user/normal programs
----------------------
-ps mgmt memory mgmt          kernal
-Floppy disk etc 
----------------------
-Hadware
-
-runlevel
-========
-Runlevel 0 is defined as ``system halt''
-Runlevel 1 is defined as ``single user mode''
-Runlevel 3 is defined as "multi user" because it is the runlevel
-that the system boot into under normal day to day conditions
-Runlevel 5 is typically the same as 3 except that a GUI gets started also
-Runlevel 6 is defined as ``system reboot''
-=======
-apropos - search the whatis database for strings
-:.!ls cp
-lsblk 
-
-
-
-http://www.tldp.org/LDP/sag/html/index.html
-http://www.tldp.org/LDP/nag2/index.html
-LFS
-===
-32 bit 4GB slow instllation file size less, exection slow
-64 bit 8GB Fast instllation file size more, exection also fast
-
-LFS and Standards
-The structure of LFS follows Linux standards as closely as possible. The primary standards are:
-• POSIX.1-2008.
-• Filesystem Hierarchy Standard (FHS)
-• Linux Standard Base (LSB) Specificatio
-
-Basics
-tar creation,exrtaction,Makefile,make,make install
-rpm -i pack.rpm
-deb -i pack.deb
-which cmd #find the path for cmd
-locate cmd #Search the cmd in the system Locate command uses the database
-created by updatedb.
-./configure --prefix=#installation path default it will install in the /usr
-If something goes wrong while running the configure script, review the config.log file.
-LFS is usually installed on a dedicated partition
-it is a good idea to use a small disk partition as swap space.
-netstat -tupln|grep "ps name"
-To create an ext3 file system on the LFS partition, run the following:
-mke2fs -jv /dev/<xxx>
-mkswap /dev/<yyy>
-Replace <yyy> with the name of the swap partition.
-grep #Search in the file
-find #Find the content in the filesystem.
-awk #Remove duplicate lines using awk.
-vim +143 filename.txt #open the file and got to line no 143
-vim -R /etc/passwd #Open file for read only
-Set env variable
-export env_name=value
-sort #
-diff #
-cat url-list.txt | xargs wget –c #Download all the URLs mentioned in the url-list.txt file
-ls -lh #Display the file in the human redable form
-gzip, bizp2, zip and unzip.
-shutdown
-crontab
-service sshd status #Check the status of the service.
-ps -efH | more #To view the current running process
-top | top command displays the top processes in the system,O or O for up and down
-Mount
-=====
-mkdir /u01
-# mount /dev/sdb1 /u01
-chmod #chmod +x file.txt
-chown oracle:dba dbora.sh #oracle user and dba group
-passwd #Set or change password
-mkdir -p dir1/dir2/dir3/dir4/ #Create the nested directory
-ifconfig #Use ifconfig command to view or configure a network interface on the Linux system
-ifconfig eth0 up/down #stop or start the eth0
-uname -a #Dispaly kernal,host name
-whereis bash #Find the where is bash
-whatis ifconfig #Whatis command displays a single line description about a command.
-man ls #Display the man page of a specific command.
-head/tail buildout.cfg #See the top or bottom 10 lines
-less hugefile.txt | ctr+f ctr+b
-su - USERNAME #Swithc username
-which bash #Finde the which bash
-mysql -u root -p -h IP #To connect to a remote mysql database. This will prompt for a password.
-yum install/update/remove httpd
-rpm -i/u/e pkg.rpm #Install,update,remove or erase
-ping -c 5 gmail.com #Ping a remote host by sending only 5 packets.
-wget #web geturl or download
-hkconfig httpd --level 2345 on
-# chkconfig --list httpd
-sudo su - zope
-find . -name "*.sh" -print | xargs /bin/rm -f
-ls *.xml | xargs -l -i cp {} /home/user
-{} is the default argument list marker. You need to use {} this with various
-command which take more than two arguments at a time
-Opening port in a linux firewall
-
-iptables -I INPUT -p tcp --dport 12345 --syn -j ACCEPT
-
-iptables -I INPUT -p udp --dport 12345 -j ACCEPT
-
-service iptables save
-
-The kernel is the heart of the operating system. In fact, it is often
-mistakenly considered to be the operating system itself, but it is not. An
-operating system provides provides many more services than a plain kernel.
-
-The Linux kernel consists of several important parts: process management,
-memory management, hardware device drivers, filesystem drivers, network
-management,
+The Linux kernel consists of several important parts: process management,memory management, hardware device drivers,
+filesystem drivers, network management,
 
 user/normal programs
 ---------------------
@@ -365,14 +137,14 @@ lsmod
 jfs
 JFS is a journaled filesystem designed by IBM to to work in high performance environments
 /proc/kcore file, it doesn't take any disk space.
-Kilobyte - KB 1024 Bytes
-Megabyte - MB	1024 KBs
-Gigabyte - GB	1024 MBs
-Terabyte - TB	1024 GBs
-Petabyte - PB	1024 TBs
-Exabyte - EB	1024 PBs
-Zettabyte - ZB	1024 EBs
-Yottabyte - YB	1024 ZBs
+Kilobyte - KB   1024 Bytes
+Megabyte - MB   1024 KBs
+Gigabyte - GB   1024 MBs
+Terabyte - TB   1024 GBs
+Petabyte - PB   1024 TBs
+Exabyte  - EB   1024 PBs
+Zettabyte - ZB  1024 EBs
+Yottabyte - YB  1024 ZBs
 
 mount /dev/hda2 /home
 unmount /dev/hda2
@@ -380,8 +152,8 @@ unmount /usr
 
 create swapping it will be helpful
 The part of the hard disk that is used as virtual memory is called the swap space.
-The kernel will write the contents of a currently unused block of memory to the hard disk so that the memory can be used 
-for another purpose mkswap /extra-swap 1024
+The kernel will write the contents of a currently unused block of memory to the hard disk so that the memory can be
+used for another purpose mkswap /extra-swap 1024
 All the swap spaces that are used automatically with swapon -a can be removed from use with swapoff -a;
 
 System-Monitoring
@@ -394,16 +166,17 @@ Boots And Shutdowns
 booting name comes from an image of the computer pulling itself up from its bootstraps, but the act itself slightly 
 more realistic.
 During bootstrapping, the computer first loads a small piece of code called the bootstrap loader, which in turn loads
-and starts the operating system. The bootstrap loader is usually stored in a fixed location on a hard disk or a floppy.
+and starts the operating system. The bootstrap loader is usually stored in a fixed location on a hard disk or a
+floppy.
 
 For PCs, the computer (its BIOS) reads in the first sector (called the boot sector) of a floppy or hard disk.
 The bootstrap loader is contained within this sector.
 After Linux has been loaded, it initializes the hardware and device drivers, and then runs init. init starts other 
 processes to allow users to log in, and do things.
 GRUB, the GRand Unifying Bootloader.
-When booting from the hard disk, the code in the master boot record will examine the partition table (also in the master
-boot record), identify the active partition (the partition that is marked to be bootable), read the boot sector from 
-that partition, and then start the code in that boot sector.
+When booting from the hard disk, the code in the master boot record will examine the partition table (also in the
+master boot record), identify the active partition (the partition that is marked to be bootable), read the boot
+sector from  that partition, and then start the code in that boot sector.
 Then the kernel will try to mount the root filesystem. 
 After this, the kernel starts the program init (located in /sbin/init) in the background 
 (this will always become process number 1).
@@ -490,7 +263,8 @@ swapon/swapoff
 swap space should be less than pysical memory.
 
 
-getty listens at the terminal and waits for the user to notify that he is ready to login in (this usually means that the user must type something).
+getty listens at the terminal and waits for the user to notify that he is ready to login in (this usually means that
+the user must type something).
 
 chfn
 Change the full name field.
@@ -523,7 +297,7 @@ Mount and unmount
 $ sudo mount /dev/sda6 /mnt
 $ sudo umount /dev/sda6
 parted -l #list the filesystems
- fstab - static information about the filesystems
+fstab - static information about the filesystems
 IPX and the NCP Filesyste next
 IP - IP Exchange
 
