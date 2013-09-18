@@ -301,3 +301,52 @@ fstab - static information about the filesystems
 IPX and the NCP Filesyste next
 IP - IP Exchange
 
+Linux
+=====
+OS:It keeps track of files on the disk, starts programs and runs them concurrently, assigns memory and other
+resources to various processes, receives packets from and sends packets to the network, and so on. The kernel
+does very little by itself, but it provides tools with which all services can be built. It also prevents anyone from
+accessing the hardware directly, forcing everyone to use the tools it provides. This way the kernel provides
+some protection for users from each other. The tools provided by the kernel are used via system calls. 
+
+At the lowest level, the kernel contains a hardware device driver for each kind of hardware it supports. Since
+the world is full of different kinds of hardware, the number of hardware device drivers is large. There are
+often many otherwise similar pieces of hardware that differ in how they are controlled by software. The
+similarities make it possible to have general classes of drivers that support similar operations;
+
+init is the main program starts when system started.
+Networking is the act of connecting two or more computers so that they can communicate with each other.
+/ - root directory
+bin   cdrom  etc   initrd.img      lib         media  opt   root  sbin     srv  tmp  var      vmlinuz.old
+boot  dev    home  initrd.img.old  lost+found  mnt    proc  run   selinux  sys  usr  vmlinuz
+/bin - command execution for single user
+/sbin - command execution for root login
+/etc -- configuration file specific to machine
+/lib - shared library needed by programs on the root file system
+/lib/modules - Loadable kernal module(System recovery)
+/dev - device files to help user interface
+/tmp - programs running often store temprory files here
+/boot - Files used by the bootstrap loader, e.g., LILO or GRUB. Kernel images are often kept here instead of
+       in the root directory.
+The /dev directory contains the special device files for all the devices. The device files are created during
+installation, and later with the /dev/MAKEDEV script. 
+
+/usr -  filesystem is often large, since all programs are installed there. All files in /usr usually come
+from a Linux distribution; locally installed programs and other stuff goes below /usr/local. This makes it
+possible to update the system from a new version of the distribution, or even a completely new distribution,
+without having to install all programs again. 
+
+like /bin and /sbin, /usr/bin and /usr/sbin
+
+/usr/local
+The place for locally installed software and other files. Distributions may not install anything in here.
+It is reserved solely for the use of the local administrator. while upgrade of os changes will not affect.
+
+The /var contains data that is changed when the system is running normally.
+
+/proc filesystem contains a illusionary filesystem. It does not exist on a disk. Instead, the kernel creates
+it in memory. It is used to provide information about the system (originally about processes, hence the name).
+
+/proc/uptime,meminfo,net,cpuinfo
+mknod /dev/ttyS0 c 4 64
+
