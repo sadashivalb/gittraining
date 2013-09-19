@@ -350,3 +350,19 @@ it in memory. It is used to provide information about the system (originally abo
 /proc/uptime,meminfo,net,cpuinfo
 mknod /dev/ttyS0 c 4 64
 
+hard disk /dev/hda
+Small Computer System Interface (SCSI) /dev/sda
+floppy disk /dev/fd0
+A CD−ROM drive uses an optically read, plastic coated disk
+CD−ROM drives are slow compared to hard disks.
+For installing new software, CD−ROMs are very good, since maximum speed is
+not essential during installation.
+A tape drive uses a tape, similar to cassettes used for music. 
+Formatting is the process of writing marks on the magnetic media that are used to mark tracks and sectors.
+
+A filesystem is the methods and data structures that an operating system uses to keep track of files on a disk or
+partition; that is, the way the files are organized on the disk
+
+fsck - check and repair a Linux filesystem
+Logical Volume Management - make the drive to expand or compress if it's logical drive.
+
