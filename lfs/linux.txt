@@ -1,0 +1,22 @@
+“Because the people who write the
+code license it to be freely distributed.” Keep in mind, however, that the critical issue relating to
+the word “free” is “freedom,” 
+S/W can installed or unistalled without rebooting the server.
+S/W service can be stop and start without reboot.
+osccommerace.org
+vim /etc/inittab #configure the UI
+nautilus
+AIGLX
+xorg
+xine and xmms players
+gthumb and GIMP #image and graphics
+#Thunder bird
+open source games
+http://distrowatch.com/index.php?dataspan=2012
+VirtualBox
+(www.virtualbox.org), Xen (www.xen.org), and KVM (www.linux-kvm.org). 
+device /dev/hda1 is hard disk directory
+sda is SATA hard drive
+type bash
+bash shortcuts
+ctrl + z > fg %1 jobs
