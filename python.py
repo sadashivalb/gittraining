@@ -430,6 +430,11 @@ A module allows you to logically organize your Python code. Grouping related cod
 easier to understand and use.
 reload(module_name)
 
+Class
+=====
+
+Class: A user-defined prototype for an object that defines a set of attributes that characterize any object of the class.
+Class variable: A variable that is shared by all instances of a class. Class variables are defined within a class but outside any of the class's methods.
 
 dir(os.path)
 

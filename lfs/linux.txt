@@ -20,3 +20,11 @@ sda is SATA hard drive
 type bash
 bash shortcuts
 ctrl + z > fg %1 jobs
+samba,cups,webmin
+DHCP
+ISP--router(block)--bub--->;'.
+fixed IP need to pay money.
+install apache server and configure ssl nginx
+mail server configuration
+print server configuration using cups(port 601) or sambaserver(901)
+
