@@ -1,10 +1,4 @@
 
-def run():
-    print "Hello"
-
-if __name__ == '__main__':
-    run()
-
 """to adduser in linux
 useradd sada
 passwd
@@ -21,3 +15,14 @@ PermitRootLogin without-password
 service iptables stop
 sudo /sbin/service network restart
 """
+To change the partition to some other
+vim /etc/fstab
+change to /mount to /apps
+mount -a
+iptables/ip6tables used to block the port to outside the world.
+chkconfg - used to check the service status,start,stop and restart
+Firewall-prgm to block and open required one
+network -- transfer of data
+tcp - communicate two machines with huge data
+udp - less data for communication
+
