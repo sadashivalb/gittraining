@@ -21,7 +21,7 @@ while 1:
 
 print "Message length is " + repr(len(msg))
 
-server = smtplib.SMTP('mail.zeomega.com')
+server = smtplib.SMTP('mail.gmail.com')
 server.set_debuglevel(1)
 server.sendmail(fromaddr, toaddrs, msg)
 server.quit()
