@@ -52,3 +52,6 @@ http://highscalability.com/
 
 
 make python module library then run instead of calling every time function
+path\bin\zopectl.bat fg
+bin\mkzopeinstance.exe path to instance
+path to instance bin\bin\zopectl fg
