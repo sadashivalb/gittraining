@@ -6,7 +6,7 @@ DOWNLOAD_PREFIX="http://www.python.org/ftp/python/$VERSION"
 DOWNLOADDIR="downloads"
 mkdir -p $DOWNLOADDIR
 cd $DOWNLOADDIR
-wget -c $DOWNLOAD_PREFIX/$PYTHON.tar.bz2
+wget -c $DOWNLOAD_PREFIX/$PYTHON.tar.bz2 --no-check-certificate
 if [ -e "Python-2.6.8.tar.bz2" ]; then
 echo "Python exits"
 else
