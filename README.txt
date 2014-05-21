@@ -23,3 +23,4 @@ d.libssl-dev
 
 ###################################
 sun.java.command
+Added to check the dependancy to verify
